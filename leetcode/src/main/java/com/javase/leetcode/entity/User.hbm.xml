@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.sjdd.order.entity">
+    <class name="User" table="base_user">
+        <id name="userNo" column="UserNo" type="java.lang.Long">
+            <generator class="increment"/>
+        </id>
+        <property name="loginAccount" type="java.lang.String" column="LoginAccount"/>
+        <property name="password" type="java.lang.String" column="Password"/>
+        <property name="sessionKey" type="java.lang.String" column="SessionKey"/>
+        <property name="userType" type="int" column="UserType"/>
+        <property name="roleNo" type="int" column="RoleNo"/>
+        <property name="userStatus" type="int" column="UserStatus"/>
+        <property name="realName" type="java.lang.String" column="RealName"/>
+        <property name="mobilePhone" type="java.lang.String" column="MobilePhone"/>
+        <property name="createTime" type="java.util.Date" column="CreateTime"/>
+        <property name="lastModified" type="java.util.Date" column="LastModified"/>
+        <property name="lastLogin" type="java.util.Date" column="LastLogin"/>
+        <property name="lastIp" type="java.lang.String" column="LastIP"/>
+        <property name="lastLogout" type="java.util.Date" column="LastLogout"/>
+    </class>
+
+</hibernate-mapping>
