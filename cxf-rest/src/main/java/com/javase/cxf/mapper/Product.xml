@@ -1,0 +1,40 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.javase.cxf.dao.ProductDao">
+    <resultMap type="com.javase.cxf.entity.Product" id="usermap">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="price" property="price"/>
+    </resultMap>
+
+    <insert id="createProduct" useGeneratedKeys="true" keyProperty="id" parameterType="com.javase.cxf.entity.Product">
+        insert into product(id, name, age)
+        values(#{id}, #{name}, #{price})
+    </insert>
+<!--
+    <delete id="deleteUser" >
+        delete from user where id = #{id}
+    </delete>
+    <update id="updateUser" parameterType="com.javase.mybatis.entity.User">
+        update user set name = #{username},
+        age = #{age} where id = #{id}
+    </update>
+    <select id="selectUser"  resultMap="usermap">
+        select * from user where id = #{id}
+    </select>
+    <select id="selectUsers" parameterType="String" resultMap="usermap">
+        select * from user where name like #{username}
+    </select>
+
+
+    <select id="getUserArticles" parameterType="int" resultMap="resultUserArticleList">
+        select user.id, user.name, user.age, article.id aid, article.title, article.content
+        from user, article
+        where user.id = article.userid and user.id = #{id};
+    </select>
+-->
+
+
+</mapper>

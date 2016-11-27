@@ -1,0 +1,1 @@
+create table product(id int not null auto_increment primary key, name varchar(20) not null, price decimal(5,3) not null);
