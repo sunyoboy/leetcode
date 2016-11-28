@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="smart:war exploded">
+    <output-path>$PROJECT_DIR$/target/smart</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="smart" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: cglib:cglib:3.1" />
+          <element id="library" level="project" name="Maven: org.ow2.asm:asm:4.2" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/smart/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="smart/web/Web" />
+    </root>
+  </artifact>
+</component>
