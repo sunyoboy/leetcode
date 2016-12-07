@@ -12,13 +12,15 @@ public class Sort {
     public static void main(String[] args) {
         System.out.println("RANDOM_SEED :" + RANDOM_SEED);
         int[] array = getRandomArrays(10);
-        int[] array2 = array;
+        // int[] array2 = array;
         traversalArray(array);
-        traversalArray(array2);
-        divideSort(array, 0, array.length - 1);
+        // traversalArray(array2);
+        // divideSort(array, 0, array.length - 1);
+        // quicksort(array);
+        mergesort(array);
         // insertSort(array);
         traversalArray(array);
-        traversalArray(array2);
+        // traversalArray(array2);
 
 
     }
@@ -139,4 +141,106 @@ public class Sort {
         }
         System.out.println();
     }
+
+
+    public static  void quicksort(int[] nums) {
+        if (isEmpty(nums)) {
+            return;
+        }
+        quicksort(nums, 0, nums.length - 1);
+    }
+
+    public static int partion(int[] nums, int left, int right) {
+        int tmp = nums[left];
+        while(left < right) {
+            while(right > left && nums[right] >= tmp) {
+                right--;
+            }
+            if(left < right)  {
+                nums[left++] = nums[right];
+            }
+
+            while(left < right && nums[left] < tmp) {
+                left++;
+            }
+            if(left < right)  {
+                nums[right--] = nums[left];
+            }
+        }
+        nums[left] = tmp;
+        return left;
+    }
+
+    public static void quicksort(int[] nums, int low, int high) {
+        if (isEmpty(nums)) {
+            return;
+        }
+        if(low < high) {
+            int pivot = partion(nums, low, high);
+            quicksort(nums, low, pivot-1);
+            quicksort(nums, pivot+1, high);
+        }
+
+    }
+
+    public static boolean isEmpty(int[] nums) {
+        // added by sunlj
+        /*if (nums == null || nums.length ==0) {
+            return true;
+        } else {
+            return false;
+        }*/
+
+        // jb51.net
+        return nums == null || nums.length ==0;
+    }
+
+
+    public static void mergesort(int[] nums) {
+        if (isEmpty(nums)) {
+            return;
+        }
+        mergesort(nums, 0, nums.length - 1);
+    }
+    public static void mergesort(int[] nums, int low, int high) {
+        if(low < high) {
+            int mid = (low + high) / 2;
+            mergesort(nums, low, mid);
+            mergesort(nums, mid+1, high);
+            merge(nums, low, mid, mid+1, high);
+        }
+    }
+
+    public static void  merge(int[] nums, int left1, int right1,
+                              int left2, int right2) {
+        int[] tmp = new int[right2+1];
+        int k = left1;
+        int index = left1;
+        while(left1 <= right1 && left2 <= right2) {
+
+            if(nums[left1] <= nums[left2]) {
+                tmp[k++] = nums[left1++];
+            } else {
+                tmp[k++] = nums[left2++];
+            }
+        }
+
+        while(left1 <= right1) {
+            tmp[k++] = nums[left1++];
+        }
+
+        while(left2 <= right2) {
+            tmp[k++] = nums[left2++];
+        }
+
+
+        while(index <= right2) {
+            nums[index] = tmp[index];
+            index++;
+        }
+
+
+    }
+
+
 }
