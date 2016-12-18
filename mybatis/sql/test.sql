@@ -63,7 +63,7 @@ CREATE TABLE `article` (
   `title` varchar(100) NOT NULL,
   `content` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of article
@@ -81,7 +81,7 @@ CREATE TABLE `employee` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Salary` int(11) NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of employee
@@ -96,7 +96,7 @@ DROP TABLE IF EXISTS `person`;
 CREATE TABLE `person` (
   `Id` int(11) DEFAULT NULL,
   `Email` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of person
@@ -113,7 +113,7 @@ CREATE TABLE `product` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `amount` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of product
@@ -132,7 +132,7 @@ CREATE TABLE `product_details` (
   `weight` int(10) unsigned DEFAULT NULL,
   `exist` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of product_details
@@ -169,7 +169,7 @@ CREATE TABLE `user` (
   `name` varchar(40) NOT NULL,
   `age` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user
@@ -196,7 +196,7 @@ CREATE TABLE `weather` (
   `Id` int(11) DEFAULT NULL,
   `Date` date DEFAULT NULL,
   `Temperature` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of weather
