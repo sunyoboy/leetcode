@@ -7,9 +7,9 @@
             <!-- 配置数据库连接信息 -->
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/test"/>
-                <property name="username" value="school"/>
-                <property name="password" value="school"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis"/>
+                <property name="username" value="root"/>
+                <property name="password" value="sunlj"/>
             </dataSource>
         </environment>
     </environments>
